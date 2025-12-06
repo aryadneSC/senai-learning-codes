@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <string.h>
+#include <ctype.h>
 
 #define MAX_LIVROS 100
 
 enum Status {
-    DISPONIVEL, // = 0
-    EMPRESTADO, // = 1
-    MANUTENCAO  // = 2
+    DISPONIVEL,
+    EMPRESTADO,
+    MANUTENCAO
 };
 
 typedef struct {
@@ -21,15 +22,16 @@ typedef struct {
 Livro livros[MAX_LIVROS];
 int numLivrosCadastrados = 0;
 
-int validarOpcao();
-void limparBuffer();
-void menu();
-char* obterTextoStatus(enum Status s);
-void cadastrarLivro();
-void listarLivros();
-void buscarPorTitulo();
-void filtrarPorStatus();
-void removerLivro();
+void limparBuffer();                   // FEITO
+void menu();                           // FEITO
+int validarOpcao();                    // FEITO
+void cadastrarLivro();                 // FEITO
+char* obterTextoStatus(enum Status s); // FEITO
+void listarLivros();                   // FEITO
+void buscarPorTitulo();                // FEITO
+void converterParaMinuscula(char *str);// FEITO
+void filtrarPorStatus();               // TODO
+void removerLivro();                   // TODO
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
@@ -80,41 +82,39 @@ int main() {
     return 0;
 }
 
-void removerLivro() {
+void limparBuffer() {
+    int c;
 
+    while((c = getchar()) != '\n' && c != EOF);
 }
 
-void filtrarPorStatus() {
-
-}
-
-void buscarPorTitulo() {
-
-}
-
-void listarLivros() {
+void menu() {
     printf("|========================================|\n");
-    printf("|              LISTAR LIVROS             |\n");
+    printf("|          SISTEMA - BIBLIOTECA          |\n");
     printf("|========================================|\n\n");
+    printf("   [1] Cadastrar Livro\n");
+    printf("   [2] Listar Todos os Livros\n");
+    printf("   [3] Buscar por Título\n");
+    printf("   [4] Filtrar por Status\n");
+    printf("   [5] Remover Livro\n");
+    printf("   [0] Voltar ao Index\n\n");
+}
 
-    if(numLivrosCadastrados == 0) {
-        printf("   Nenhum livro cadastrado!");
-        return;
-    }
+int validarOpcao() {
+    int op;
+    int leitura;
 
-    for(int i = 0; i < numLivrosCadastrados; i++) {
-        printf("   ----------------------------------|\n");
-        printf("   Livro #%d\n", i + 1);
-        printf("   ----------------------------------|\n");
-        printf("   Título: %s\n", livros[i].titulo);
-        printf("   Autor(a): %s\n", livros[i].autor);
-        printf("   Ano de publicação: %d\n", livros[i].anoPublicacao);
-        printf("   Status: %s\n", obterTextoStatus(livros[i].status));
-        printf("\n");
-    }
+    do {
+        leitura = scanf("%d", &op);
+        limparBuffer();
 
-    printf("   ----------------------------------|\n");
-    printf("   Total: %d livro(s) cadastrado(s)", numLivrosCadastrados);
+        if (leitura == 0) {
+            printf("   Entrada inválida! Digite um número: ");
+        }
+
+    } while (leitura == 0);
+
+    return op;
 }
 
 void cadastrarLivro() {
@@ -191,37 +191,93 @@ char* obterTextoStatus(enum Status s) {
     }
 }
 
-void menu() {
+void listarLivros() {
     printf("|========================================|\n");
-    printf("|          SISTEMA - BIBLIOTECA          |\n");
+    printf("|              LISTAR LIVROS             |\n");
     printf("|========================================|\n\n");
-    printf("   [1] Cadastrar Livro\n");
-    printf("   [2] Listar Todos os Livros\n");
-    printf("   [3] Buscar por Título\n");
-    printf("   [4] Filtrar por Status\n");
-    printf("   [5] Remover Livro\n");
-    printf("   [0] Voltar ao Index\n\n");
+
+    if(numLivrosCadastrados == 0) {
+        printf("   Nenhum livro cadastrado!");
+        return;
+    }
+
+    for(int i = 0; i < numLivrosCadastrados; i++) {
+        printf("   ----------------------------------|\n");
+        printf("   Livro #%d\n", i + 1);
+        printf("   ----------------------------------|\n");
+        printf("   Título: %s\n", livros[i].titulo);
+        printf("   Autor(a): %s\n", livros[i].autor);
+        printf("   Ano de publicação: %d\n", livros[i].anoPublicacao);
+        printf("   Status: %s\n", obterTextoStatus(livros[i].status));
+        printf("\n");
+    }
+
+    printf("   ----------------------------------|\n");
+    printf("   Total: %d livro(s) cadastrado(s)", numLivrosCadastrados);
 }
 
-int validarOpcao() {
-    int op;
-    int leitura;
+void buscarPorTitulo() {
+    printf("|========================================|\n");
+    printf("|              BUSCAR LIVRO              |\n");
+    printf("|========================================|\n\n");
 
-    do {
-    leitura = scanf("%d", &op);
-    limparBuffer();
+    if (numLivrosCadastrados == 0) {
+        printf("   Nenhum livro cadastrado!\n");
+        return;
+    }
 
-    if(leitura == 0) {
-        printf("   Entrada inválida! Digite um número: ");
+    char busca[100];
+    printf("   Digite o título (ou parte dele): ");
+    fgets(busca, 100, stdin);
+    busca[strcspn(busca, "\n")] = '\0';
+
+    char buscaMinuscula[100];
+    strcpy(buscaMinuscula, busca);
+    converterParaMinuscula(buscaMinuscula);
+
+    int encontrados = 0;
+
+    for (int i = 0; i < numLivrosCadastrados; i++) {
+        char tituloMinusculo[100];
+        strcpy(tituloMinusculo, livros[i].titulo);
+        converterParaMinuscula(tituloMinusculo);
+
+        if (strstr(tituloMinusculo, buscaMinuscula) != NULL) {
+        if (encontrados == 0) {
+            printf("\n   Livros encontrados:\n");
         }
 
-    } while(leitura == 0);
+        printf("\n   --------------------------------------|\n");
+        printf("     Livro #%d\n", i + 1);
+        printf("\n   --------------------------------------|\n");
+        printf("   Título:  %s\n", livros[i].titulo);
+        printf("   Autor:   %s\n", livros[i].autor);
+        printf("   Ano:     %d\n", livros[i].anoPublicacao);
+        printf("   Status:  %s\n", obterTextoStatus(livros[i].status));
 
-    return op;
+        encontrados++;
+
+        }
+    }
+
+        if (encontrados == 0) {
+            printf("\n   Nenhum livro encontrado com '%s'.\n", busca);
+        } else {
+            printf("\n   --------------------------------------|\n");
+            printf("   Total: %d livro(s) encontrado(s)\n", encontrados);
+    }
 }
 
-void limparBuffer() {
-    int c;
+void converterParaMinuscula(char *str) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
+}
 
-    while ((c = getchar()) != '\n' && c != EOF);
+void filtrarPorStatus() {
+
+}
+
+void removerLivro() {
+
 }
