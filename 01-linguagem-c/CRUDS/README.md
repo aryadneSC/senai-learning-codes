@@ -20,27 +20,6 @@ Este repositório contém uma série de **sistemas CRUD** (Create, Read, Update,
 
 ---
 
-## 🗂️ **Estrutura do Repositório**
-```
-📦 logica-programacao-senai/
-│
-├── 📁 01-index/           ✅ Sistema de navegação entre CRUDs
-├── 📁 02-biblioteca/      🚧 Gestão de livros (struct, arrays, filtros)
-├── 📁 03-contatos/        📅 Agenda com busca e ordenação
-├── 📁 04-alunos/          📅 Sistema escolar com estatísticas
-├── 📁 05-produtos/        📅 Controle de estoque e cálculos
-├── 📁 06-usuarios/        📅 Cadastro com validações
-├── 📁 07-playlist/        📅 Gerenciador de músicas (malloc/realloc)
-├── 📁 08-veiculos/        📅 Concessionária (ordenação avançada)
-├── 📁 09-receitas/        📅 Livro de receitas (arrays bidimensionais)
-└── 📁 10-filmes/          📅 Catálogo com arquivos e modularização
-```
-
-**Legenda:**  
-✅ Concluído | 🚧 Em desenvolvimento | 📅 Planejado
-
----
-
 ## 🛠️ **Tecnologias e Conceitos**
 
 ### **Linguagem:**
@@ -73,6 +52,9 @@ Este repositório contém uma série de **sistemas CRUD** (Create, Read, Update,
 
 ## 📚 **Projetos**
 
+**Legenda:**  
+✅ Concluído | 🚧 Em desenvolvimento | 📅 Planejado
+
 ### **[01 - Index](./01-index/)** ✅
 Sistema de navegação central que permite acessar todos os CRUDs do portfolio.
 
@@ -80,7 +62,7 @@ Sistema de navegação central que permite acessar todos os CRUDs do portfolio.
 
 ---
 
-### **[02 - Biblioteca](./02-biblioteca/)** 📅
+### **[02 - Biblioteca](./02-biblioteca/)** ✅
 Sistema de gerenciamento de livros com cadastro, busca e filtros por status.
 
 **Conceitos:** Structs, arrays, enums, busca linear, filtros
@@ -94,7 +76,7 @@ Sistema de gerenciamento de livros com cadastro, busca e filtros por status.
 
 ---
 
-### **[03 - Contatos](./03-contatos/)** 🚧
+### **[03 - Contatos](./03-contatos/)** 📅 Planejado
 Agenda de contatos com funcionalidades de busca, ordenação e exportação.
 
 **Conceitos:** Ordenação alfabética, busca por substring, manipulação de arquivos texto
@@ -156,18 +138,6 @@ Catálogo de filmes com persistência em arquivos binários.
 - Compilador C (GCC, MinGW, Dev-C++, Code::Blocks)
 - Sistema operacional Windows (comandos `cls` e `pause`)
 
-### **Compilação:**
-```bash
-# Navegue até a pasta do projeto desejado
-cd 01-index/
-
-# Compile com GCC
-gcc main.c -o index.exe
-
-# Execute
-./index.exe
-```
-
 **Ou use sua IDE favorita:**
 - Dev-C++
 - Code::Blocks
@@ -191,7 +161,7 @@ gcc main.c -o index.exe
 ## 📈 **Roadmap**
 
 - [x] ✅ Criar sistema Index de navegação
-- [ ] 🚧 Implementar CRUD Biblioteca
+- [x] ✅ Implementar CRUD Biblioteca
 - [ ] 📅 Implementar CRUD Contatos
 - [ ] 📅 Implementar CRUD Alunos
 - [ ] 📅 Implementar CRUD Produtos
