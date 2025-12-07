@@ -30,8 +30,12 @@ char* obterTextoStatus(enum Status s); // FEITO
 void listarLivros();                   // FEITO
 void buscarPorTitulo();                // FEITO
 void converterParaMinuscula(char *str);// FEITO
-void filtrarPorStatus();               // TODO
-void removerLivro();                   // TODO
+void filtrarPorStatus();               // FEITO
+void removerLivro();                   // FEITO
+int temLivrosCadastrados();     // ADICIONADO
+void exibirMenuStatus();        // ADICIONADO
+int lerStatusFiltro();          // ADICIONADO
+void imprimirLivro(int indice); // ADICIONADO
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
@@ -65,11 +69,11 @@ int main() {
             removerLivro();
             break;
         case 0:
-            printf("   At� logo!\n\n");
+            printf("   Até logo!\n\n");
             printf("|========================================|\n");
             break;
         default:
-            printf("   Op��o inv�lida! Tente novamente!\n\n");
+            printf("   Opção inválida! Tente novamente!\n\n");
         }
 
         if (op != 0) {
@@ -94,7 +98,7 @@ void menu() {
     printf("|========================================|\n\n");
     printf("   [1] Cadastrar Livro\n");
     printf("   [2] Listar Todos os Livros\n");
-    printf("   [3] Buscar por T�tulo\n");
+    printf("   [3] Buscar por Título\n");
     printf("   [4] Filtrar por Status\n");
     printf("   [5] Remover Livro\n");
     printf("   [0] Voltar ao Index\n\n");
@@ -109,7 +113,7 @@ int validarOpcao() {
         limparBuffer();
 
         if (leitura == 0) {
-            printf("   Entrada inv�lida! Digite um n�mero: ");
+            printf("   Entrada inválida! Digite um número: ");
         }
 
     } while (leitura == 0);
@@ -122,22 +126,20 @@ void cadastrarLivro() {
     printf("|          CADASTRAR NOVO LIVRO          |\n");
     printf("|========================================|\n\n");
 
-    if(numLivrosCadastrados >= MAX_LIVROS) {
-        printf("   Limite de cadastros atingido!\n");
+    if(!temLivrosCadastrados()) {
         return;
     }
 
     int continuarCadastro;
 
     do {
-        if(numLivrosCadastrados >= MAX_LIVROS) {
-            printf("   Limite atingido!\n");
+        if(numLivrosCadastrados > MAX_LIVROS) {
             break;
         }
 
         Livro *livroAtual = &livros[numLivrosCadastrados];
 
-        printf("   T�tulo: ");
+        printf("   Título: ");
         fgets(livroAtual->titulo, 100, stdin);
         livroAtual->titulo[strcspn(livroAtual->titulo, "\n")] = '\0';
 
@@ -145,25 +147,15 @@ void cadastrarLivro() {
         fgets(livroAtual->autor, 50, stdin);
         livroAtual->autor[strcspn(livroAtual->autor, "\n")] = '\0';
 
-        printf("   Ano de publica��o: ");
+        printf("   Ano de publicação: ");
         scanf("%d", &livroAtual->anoPublicacao);
         limparBuffer();
 
-        printf("   \nStatus:\n");
-        printf("   [0] Dispon�vel\n");
-        printf("   [1] Emprestado\n");
-        printf("   [2] Manuten��o\n\n");
-        printf("   Escolha: ");
+        exibirMenuStatus();
 
-        int opcaoStatus;
-        do {
-            opcaoStatus = validarOpcao();
-            if(opcaoStatus < 0 || opcaoStatus > 2) {
-                printf("   Status inv�lido! Digite 0, 1 ou 2");
-            }
-        } while(opcaoStatus < 0 || opcaoStatus > 2);
+        int statusFiltro = lerStatusFiltro();
 
-        livroAtual->status = opcaoStatus;
+        livroAtual->status = statusFiltro;
 
         numLivrosCadastrados++;
 
@@ -171,7 +163,7 @@ void cadastrarLivro() {
 
         printf("\n   Deseja cadastrar outro livro?\n");
         printf("\n   [1] Sim");
-        printf("\n   [0] N�o");
+        printf("\n   [0] Não");
         printf("\n   Escolha: ");
         continuarCadastro = validarOpcao();
 
@@ -184,9 +176,9 @@ void cadastrarLivro() {
 
 char* obterTextoStatus(enum Status s) {
     switch(s) {
-        case DISPONIVEL:   return "Dispon�vel";
+        case DISPONIVEL:   return "Disponível";
         case EMPRESTADO:   return "Emprestado";
-        case MANUTENCAO:   return "Manuten��o";
+        case MANUTENCAO:   return "Manutenção";
         default:           return "Desconhecido";
     }
 }
@@ -196,20 +188,12 @@ void listarLivros() {
     printf("|              LISTAR LIVROS             |\n");
     printf("|========================================|\n\n");
 
-    if(numLivrosCadastrados == 0) {
-        printf("   Nenhum livro cadastrado!");
+    if(!temLivrosCadastrados()) {
         return;
     }
 
     for(int i = 0; i < numLivrosCadastrados; i++) {
-        printf("   ----------------------------------|\n");
-        printf("   Livro #%d\n", i + 1);
-        printf("   ----------------------------------|\n");
-        printf("   T�tulo: %s\n", livros[i].titulo);
-        printf("   Autor(a): %s\n", livros[i].autor);
-        printf("   Ano de publica��o: %d\n", livros[i].anoPublicacao);
-        printf("   Status: %s\n", obterTextoStatus(livros[i].status));
-        printf("\n");
+        imprimirLivro(i);
     }
 
     printf("   ----------------------------------|\n");
@@ -221,13 +205,12 @@ void buscarPorTitulo() {
     printf("|              BUSCAR LIVRO              |\n");
     printf("|========================================|\n\n");
 
-    if (numLivrosCadastrados == 0) {
-        printf("   Nenhum livro cadastrado!\n");
+    if(!temLivrosCadastrados()) {
         return;
     }
 
     char busca[100];
-    printf("   Digite o t�tulo (ou parte dele): ");
+    printf("   Digite o título (ou parte dele): ");
     fgets(busca, 100, stdin);
     busca[strcspn(busca, "\n")] = '\0';
 
@@ -247,14 +230,7 @@ void buscarPorTitulo() {
             printf("\n   Livros encontrados:\n");
         }
 
-        printf("\n   --------------------------------------|\n");
-        printf("     Livro #%d\n", i + 1);
-        printf("\n   --------------------------------------|\n");
-        printf("   T�tulo:  %s\n", livros[i].titulo);
-        printf("   Autor:   %s\n", livros[i].autor);
-        printf("   Ano:     %d\n", livros[i].anoPublicacao);
-        printf("   Status:  %s\n", obterTextoStatus(livros[i].status));
-
+        imprimirLivro(i);
         encontrados++;
 
         }
@@ -275,9 +251,137 @@ void converterParaMinuscula(char *str) {
 }
 
 void filtrarPorStatus() {
+    printf("|========================================|\n");
+    printf("|           FILTRAR POR STATUS           |\n");
+    printf("|========================================|\n\n");
 
+    if(!temLivrosCadastrados()) {
+        return;
+    }
+
+    exibirMenuStatus();
+    int statusFiltro = lerStatusFiltro();
+
+    int encontrados = 0;
+    for (int i = 0; i < numLivrosCadastrados; i++) {
+        if (livros[i].status == statusFiltro) {
+            if (encontrados == 0) {
+                printf("   Livros com status [%s] encontrados:\n",
+                       obterTextoStatus(statusFiltro));
+            }
+
+            imprimirLivro(i);
+            encontrados++;
+        }
+    }
+
+    if (encontrados == 0) {
+        printf("   Nenhum livro com status [%s].\n\n",
+               obterTextoStatus(statusFiltro));
+    } else {
+        printf("\n   --------------------------------------|\n");
+        printf("   Total: %d livro(s) encontrado(s)\n", encontrados);
+    }
 }
 
 void removerLivro() {
+    printf("|========================================|\n");
+    printf("|              REMOVER LIVRO             |\n");
+    printf("|========================================|\n\n");
 
+    if(!temLivrosCadastrados()) {
+        return;
+    }
+
+    printf("   Livros cadastrados:\n\n");
+
+    for(int i = 0; i < numLivrosCadastrados; i++) {
+        printf("   ----------------------------------|\n");
+        printf("   [%d] %s\n", i + 1, livros[i].titulo);
+        printf("   Autor: %s\n", livros[i].autor);
+    }
+
+    printf("   ----------------------------------|\n");
+
+    printf("   Qual livro deseja remover? (1-%d): ", numLivrosCadastrados);
+
+    int escolha;
+
+    do {
+        escolha = validarOpcao();
+
+        if(escolha < 1 || escolha > numLivrosCadastrados) {
+            printf("   Opção inválida! Digite entre 1 e %d", numLivrosCadastrados);
+        }
+    } while(escolha < 1 || escolha > numLivrosCadastrados);
+
+    int indice = escolha - 1;
+
+    printf("   Tem certeza que deseja remover '%s'?\n", livros[indice].titulo);
+    printf("   [1] Sim\n");
+    printf("   [2] Não\n");
+    printf("   Escolha: ");
+
+    int confirma = validarOpcao();
+
+    if(confirma != 1) {
+        printf("   Remoção cancelada!\n");
+        return;
+    }
+
+    for(int i = indice; i < numLivrosCadastrados - 1; i++) {
+        livros[i] = livros[i + 1];
+    }
+
+    numLivrosCadastrados--;
+
+    printf("   Livro removido com sucesso!\n");
+}
+
+int temLivrosCadastrados() {
+    if(numLivrosCadastrados == 0) {
+        printf("   Nenhum livro cadastrado!\n\n");
+        return 0;
+    }
+    return 1;
+}
+
+void exibirMenuStatus() {
+    printf("   Status para filtrar:\n");
+    printf("   [0] DISPONÍVEL\n");
+    printf("   [1] EMPRESTADO\n");
+    printf("   [2] MANUTENÇÃO\n");
+    printf("   Escolha: ");
+}
+
+int limiteCadastrosAtingido() {
+    if(numLivrosCadastrados >= MAX_LIVROS) {
+        printf("   Limite atingido!\n");
+        return 0;
+    }
+        return 1;
+}
+
+int lerStatusFiltro() {
+    int statusFiltro;
+
+    do {
+        statusFiltro = validarOpcao();
+
+        if(statusFiltro < 0 || statusFiltro > 2) {
+                printf("   Status inválido! Digite 0, 1 ou 2");
+        }
+    } while(statusFiltro < 0 || statusFiltro > 2);
+
+    return statusFiltro;
+}
+
+void imprimirLivro(int indice) {
+    printf("\n   ──────────────────────────────────────\n");
+    printf("   Livro #%d\n", indice + 1);
+    printf("   ──────────────────────────────────────\n");
+    printf("   Título:  %s\n", livros[indice].titulo);
+    printf("   Autor:   %s\n", livros[indice].autor);
+    printf("   Ano:     %d\n", livros[indice].anoPublicacao);
+    printf("   Status:  %s\n", obterTextoStatus(livros[indice].status));
 }
