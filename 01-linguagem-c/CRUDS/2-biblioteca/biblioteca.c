@@ -38,7 +38,7 @@ int lerStatusFiltro();          // ADICIONADO
 void imprimirLivro(int indice); // ADICIONADO
 
 int main() {
-    setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL, "pt-br.UTF-8");
     int op;
 
     do {
@@ -126,9 +126,6 @@ void cadastrarLivro() {
     printf("|          CADASTRAR NOVO LIVRO          |\n");
     printf("|========================================|\n\n");
 
-    if(!temLivrosCadastrados()) {
-        return;
-    }
 
     int continuarCadastro;
 
@@ -168,8 +165,7 @@ void cadastrarLivro() {
         continuarCadastro = validarOpcao();
 
         system("cls");
-        printf("|========================================|\n");
-        printf("\n");
+        printf("|========================================|\n\n");
 
     } while(continuarCadastro == 1);
 }
@@ -347,7 +343,7 @@ int temLivrosCadastrados() {
 }
 
 void exibirMenuStatus() {
-    printf("   Status para filtrar:\n");
+    printf("\n   Status para filtrar:\n");
     printf("   [0] DISPONÍVEL\n");
     printf("   [1] EMPRESTADO\n");
     printf("   [2] MANUTENÇÃO\n");
@@ -356,7 +352,7 @@ void exibirMenuStatus() {
 
 int limiteCadastrosAtingido() {
     if(numLivrosCadastrados >= MAX_LIVROS) {
-        printf("   Limite atingido!\n");
+        printf("\n   Limite atingido!\n");
         return 0;
     }
         return 1;
@@ -377,9 +373,10 @@ int lerStatusFiltro() {
 }
 
 void imprimirLivro(int indice) {
-    printf("\n   ──────────────────────────────────────\n");
+    printf("\n");
+    printf("   --------------------------------------\n");
     printf("   Livro #%d\n", indice + 1);
-    printf("   ──────────────────────────────────────\n");
+    printf("   --------------------------------------\n");
     printf("   Título:  %s\n", livros[indice].titulo);
     printf("   Autor:   %s\n", livros[indice].autor);
     printf("   Ano:     %d\n", livros[indice].anoPublicacao);
