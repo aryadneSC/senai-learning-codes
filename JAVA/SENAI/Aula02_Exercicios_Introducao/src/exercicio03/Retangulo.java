@@ -29,7 +29,7 @@ public class Retangulo {
 	}
 	
 	int calcularPerimetro() {
-		return base + altura;
+		return 2 * (base + altura);
 	}
 
 	public static void main(String[] args) {
@@ -45,12 +45,10 @@ public class Retangulo {
 		int altura = sc.nextInt();
 		retangulo.setAltura(altura);
 		
-		System.out.println("Area = " + retangulo.calcularArea() +
-					" Perimetro = " + retangulo.calcularPerimetro()
-					);
-		
-		
-		
+		System.out.println("Área: " + retangulo.calcularArea());
+        System.out.println("Perímetro: " + retangulo.calcularPerimetro());
+        
+        sc.close();
 	}
 
 }
