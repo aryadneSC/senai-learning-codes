@@ -1,5 +1,6 @@
-public class Macaco {
-    
+class Macaco {
+    private String nome;
+    private list<String> estomago;
 }
 
 public class Main {
