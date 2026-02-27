@@ -23,6 +23,11 @@ class Macaco {
     public void verEstomago() {
         System.out.println("Estomago do " + this.nome + ": " + this.estomago);
     }
+    
+    public void digerir() {
+        this.estomago.clear();
+        System.out.println(this.nome + " fez caca");
+    }
 }
 
 public class Exercicio02 {
@@ -45,6 +50,8 @@ public class Exercicio02 {
         meuMacaco.comer(novoAlimento);
         
         meuMacaco.verEstomago();
+        
+        meuMacaco.digerir();
         
         sc.close();
     }
