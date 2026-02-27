@@ -25,7 +25,7 @@ class Alimento {
     
     @Override
     public String toString() {
-        return this.nome + "  " + this.kcal + "Kcal: ";
+        return this.nome + "  " + this.kcal + " Kcal";
     }
     
 }
