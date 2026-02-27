@@ -33,14 +33,19 @@ class Alimento {
 public class Main {
 	public static void main(String[] args) {
 		
-		Alimento alimento1 = new Alimento("Melancia", 30.0);
+		Alimento alimento1 = new Alimento("Melancia", 32.0);
 		
 		Alimento alimento2 = new Alimento("Maçã", 72.0);
 		
 		Alimento alimento3 = new Alimento("Ovo", 77.0);
 		
-		System.out.println("Alimento 1: " + alimento1.toString());
-		System.out.println("Alimento 2: " + alimento2.toString());
-		System.out.println("Alimento 3: " + alimento1.toString());
+		System.out.println(" " + alimento1.toString());
+		System.out.println(" " + alimento2);
+		System.out.println(" " + alimento1);
+		
+		alimento3.setNome("Ovo frito");
+		alimento3.setKcal(98.0);
+		
+		System.out.println(" " + alimento3);
 	}
 }
