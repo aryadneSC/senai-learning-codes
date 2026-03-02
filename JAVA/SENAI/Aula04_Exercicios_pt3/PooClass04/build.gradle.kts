@@ -2,7 +2,7 @@ plugins {
     id("java")
 }
 
-group = "main"
+group = "br.com.senai.exercises"
 version = "1.0-SNAPSHOT"
 
 repositories {
