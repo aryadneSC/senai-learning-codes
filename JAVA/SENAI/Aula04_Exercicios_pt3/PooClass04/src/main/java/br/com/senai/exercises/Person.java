@@ -5,7 +5,7 @@ public class Person {
     private int age;
     private double weight, height;
     private boolean isAlive = true;
-    private String List<String>deathCause;
+    private List<String> deathCause;
     
     public void setName(String name) {
         this.name = name;
@@ -20,7 +20,7 @@ public class Person {
             System.out.println(this.name + " is " +this.age + " old");
         } 
         this.age = age;
-        else(age < 0) {
+        if(age < 0) {
             System.out.println("Please set a valid age!");
         }
         
