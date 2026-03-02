@@ -28,8 +28,9 @@ public class Person {
         return this.age;
     }
     
-    public void setWeight(double weight) {
+    public void setMeasure(double weight, double height) {
         this.weight = weight;
+        this.height = height;
     }
     
     public double getWeight() {
@@ -40,7 +41,14 @@ public class Person {
         return this.height;
     }
     
-    public void setheight(double height) {
-        this.height = height;
+    public boolean isAlive() {
+        
     }
+    
+    public String deathCause() {
+        // random death
+    }
+    
+    public String to
+    
 }
