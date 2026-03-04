@@ -5,7 +5,7 @@ public class Person {
     private int age;
     private double weight, height;
     private boolean isAlive = true;
-    private List<String> deathCause;
+    private String[] deathCause;
     
     public void setName(String name) {
         this.name = name;
@@ -17,9 +17,9 @@ public class Person {
     
     public void setAge(int age) {
         if(age >= 0) {
+            this.age = age;
             System.out.println(this.name + " is " +this.age + " old");
-        } 
-        this.age = age;
+        }
         if(age < 0) {
             System.out.println("Please set a valid age!");
         }
@@ -47,15 +47,33 @@ public class Person {
     }
     
     public boolean isAlive() {
+        return this.isAlive;
+    }
+    
+    public void growOld() {
+        if(age < 21 == 0) {
+            this.height += 0.5;
+            this.age++;
+        } if(age > 20 && <= 21 == 0) {
+            System.out.println(this.name + " is an adult!");
+        }
+        System.out.println("It's " + this.name + " birthday!");
+    }
+    
+    public Person(String name, int age, double weight, double height) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.height = height;
+        this.isAlive = true;
         
-    }
-    
-    public String deathCause() {
-        // random death
-    }
-    
-    public String toString() {
-        // is it necessary? why?
+        this.deathCause = new String[] {
+            "Meteor",
+            "Shock",
+            "Drow",
+            "Starvation",
+            "Choke",
+        };
     }
     
 }
