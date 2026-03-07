@@ -33,3 +33,17 @@ public class Carro {
         this.combustivel += quantidade;
     }
 }
+
+public class Main {
+    public static void main(String[] args) {
+        Carro meuFusca = new Carro(10.0);
+
+        meuFusca.abastecer(50.0);
+        meuFusca.andar(100.0);
+        
+        System.out.println("Combustível restante: " + meuFusca.getCombustivel() + " litros");
+        
+        meuFusca.andar(50.0);
+        System.out.println("Combustível após segunda viagem: " + meuFusca.getCombustivel());
+    }
+}
