@@ -1,8 +1,8 @@
 public class Pessoa {
-    String nome;
-    int idade;
-    double peso;
-    double altura;
+    private String nome;
+    private int idade;
+    private double peso;
+    private double altura;
 
     public Pessoa(String nome, int idade, double peso, double altura) {
         this.nome = nome;
