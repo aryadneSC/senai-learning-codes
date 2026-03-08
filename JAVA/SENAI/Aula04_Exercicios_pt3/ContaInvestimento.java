@@ -1,8 +1,8 @@
 public class ContaInvestimento {
-    int numeroDaConta;
-    String nomeDoTitular;
-    double saldo;
-    double taxaJuros;
+    private int numeroDaConta;
+    private String nomeDoTitular;
+    private double saldo;
+    private double taxaJuros;
 
     public ContaInvestimento(int numeroDaConta, String nomeDoTitular, double saldoInicial, double taxaJuros) {
         this.numeroDaConta = numeroDaConta;
