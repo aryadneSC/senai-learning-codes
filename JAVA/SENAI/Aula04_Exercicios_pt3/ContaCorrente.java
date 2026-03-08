@@ -1,7 +1,7 @@
 public class ContaCorrente {
-    int numeroDaConta;
-    String nomeDoTitular;
-    double saldo;
+    private int numeroDaConta;
+    private String nomeDoTitular;
+    private double saldo;
 
     public ContaCorrente(int numeroDaConta, String nomeDoTitular) {
         this.numeroDaConta = numeroDaConta;
