@@ -1,6 +1,6 @@
 public class Carro {
-    double combustivel = 0;
-    double consumo;
+    private double combustivel = 0;
+    private double consumo;
 
     public Carro(double consumo) {
         this.consumo = consumo;
