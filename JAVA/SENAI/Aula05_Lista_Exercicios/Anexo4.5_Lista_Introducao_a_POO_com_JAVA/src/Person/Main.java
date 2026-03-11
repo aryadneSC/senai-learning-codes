@@ -20,30 +20,36 @@ public class Main {
         menu();
 
         do {
+            Person p = new Person();
 
             System.out.print("Name: ");
             String name = sc.nextLine();
+            p.setName(name);
 
             System.out.print("Age: ");
             int age = sc.nextInt();
+            p.setAge(age);
+            sc.nextLine();
 
             System.out.print("Height (cm): ");
             double height = sc.nextDouble();
+            p.setHeight(height);
             sc.nextLine(); 
 
-            Person p = new Person(name, age, height);
-
-            p.displayData();
             System.out.println();
+            p.displayData();
             
             if (p.isAdult()) {
+                System.out.println("Age: " + p.getAge() + " years old.");
                 System.out.println("You're an adult. Waterslide Allowed! :D");
             } else {
+                System.out.println("Age: " + p.getAge() + " years old.");
                 System.out.println("Waterslide Denied! Sorry kid :(");
             }
 
             System.out.print("\nDo you want to register another person? (y/n): ");
             choice = sc.nextLine();
+            System.out.println();
 
         } while (choice.equalsIgnoreCase("y"));
 
