@@ -47,8 +47,4 @@ public class Person {
     public boolean isAdult() {
         return this.age >= 18; 
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3fb6e25 (Minor syntax fixes)
