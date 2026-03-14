@@ -56,8 +56,4 @@ public class Main {
         System.out.println("Have a splashy day!");
         sc.close();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3fb6e25 (Minor syntax fixes)
