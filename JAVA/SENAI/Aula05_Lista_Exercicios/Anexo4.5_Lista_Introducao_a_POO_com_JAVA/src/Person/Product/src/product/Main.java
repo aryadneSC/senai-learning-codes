@@ -1,0 +1,11 @@
+package product;
+
+public class Main {
+    public static void main(String args) {
+        Product p = new Product("Arroz", 25.50, 10);
+
+        p.displayInfo();
+        
+        System.out.println("Total no estoque: R$ " + p.getTotalValueInStock());
+    }
+}
