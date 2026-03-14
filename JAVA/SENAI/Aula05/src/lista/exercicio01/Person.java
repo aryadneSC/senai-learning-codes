@@ -1,3 +1,5 @@
+package lista.exercicio01;
+
 /*Exercício 2 — Classe Pessoa
 Crie uma classe chamada Pessoa.
 Requisitos

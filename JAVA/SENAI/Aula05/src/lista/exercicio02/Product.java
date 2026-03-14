@@ -1,9 +1,9 @@
-package Product;
+package lista.exercicio02;
 
 public class Product {
     private String name;
     private double price;
-    private int quantityInStock = 0;
+    private int quantityInStock;
 
     public Product(String name, double price, int quantity) {
         setName(name);
@@ -25,7 +25,7 @@ public class Product {
         this.price = price;
     }
 
-    public double setPrice() {
+    public double getPrice() {
         return this.price;
     }
 
@@ -34,13 +34,14 @@ public class Product {
         this.quantityInStock += quantity;
     }
 
-    public double getTotalValueInStock() {
+    public double calculateTotalValue() {
         return this.price * this.quantityInStock;
     }
 
     public void displayInfo() {
-        System.out.println("Product name: " + this.name);
-        System.out.println("Price: " + this.price);
-        System.out.println("Quantity in stock: " + this.price);
+        System.out.println("Product: " + this.name);
+        System.out.println("Price: R$ " + this.price);
+        System.out.println("Quantity: " + this.quantityInStock);
+        System.out.println("Total value in stock: R$ " + calculateTotalValue());
     }
 }

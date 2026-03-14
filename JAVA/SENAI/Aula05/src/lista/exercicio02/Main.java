@@ -1,4 +1,4 @@
-package product;
+package lista.exercicio02;
 
 public class Main {
     public static void main(String args) {
@@ -6,6 +6,6 @@ public class Main {
 
         p.displayInfo();
         
-        System.out.println("Total no estoque: R$ " + p.getTotalValueInStock());
+        System.out.println("Total no estoque: R$ " + p.calculateTotalValue());
     }
 }
