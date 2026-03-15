@@ -8,7 +8,6 @@ public class Car {
     public Car(String brand, int model, double initialSpeed) {
         setBrand(brand);
         setModel(model);
-        
         if (initialSpeed < 0) initialSpeed = 0;
         this.speed = initialSpeed;
     }
@@ -39,7 +38,7 @@ public class Car {
     }
 
     public void setModel(int model) {
-        if (model < 1886) throw new IllegalArgumentException("Invalid year."); // Primeiro carro foi em 1886!
+        if (model < 1886) throw new IllegalArgumentException("Invalid year.");
         this.model = model;
     }
 }
