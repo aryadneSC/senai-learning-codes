@@ -30,10 +30,14 @@ public class ProductManager {
 		
 		stock.add(newProduct);
 		System.out.println(newProduct + " was added!");
-		System.out.println("------------------------------------------");
 	}
 	
 	public void updateProduct(Scanner sc) {
+		if (stock.isEmpty()) {
+	        System.out.println("List is empty.");
+	        return;
+	    }
+		
 	    System.out.print("Enter the Product ID to update: ");
 	    int idToFind = sc.nextInt();
 	    sc.nextLine();
@@ -54,11 +58,16 @@ public class ProductManager {
 	    }
 
 	    if (!found) {
-	        System.out.println("Product with ID " + idToFind + " not found.");
+	        System.out.println("Product ID not found.");
 	    }
 	}
 	
 	public void removeProduct(Scanner sc) {
+		if (stock.isEmpty()) {
+	        System.out.println("List is empty.");
+	        return;
+	    }
+		
 		System.out.println("Enter the ID to remove: ");
 		int idInput = sc.nextInt();
 		
@@ -76,6 +85,5 @@ public class ProductManager {
 	    for (Product p : stock) {
 	        p.displayProductInfo();
 	    }
-	    System.out.println("------------------------------------------");
 	}
 }

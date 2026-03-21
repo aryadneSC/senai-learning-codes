@@ -10,6 +10,7 @@ public class Main {
         int op;
 
         do {
+        	System.out.println("----------------------------------------------");
             System.out.println("""
                     !- MENU -!
                     [1] Create product
@@ -22,6 +23,7 @@ public class Main {
             System.out.print("Choose: ");
             op = sc.nextInt();
             sc.nextLine();
+            System.out.println();
 
             switch (op) {
                 case 1:
