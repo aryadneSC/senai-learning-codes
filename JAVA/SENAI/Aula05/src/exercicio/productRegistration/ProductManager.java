@@ -8,9 +8,7 @@ import exercicio.productRegistration.Product;
 public class ProductManager {
 	private ArrayList<Product> stock = new ArrayList<>();
 	
-	Scanner sc = new Scanner(System.in);
-	
-	public void createProduct(Scanner productName) {
+	public void createProduct(Scanner sc) {
 		if (stock == null) throw new IllegalArgumentException("Unexpected action.");
 		
 		System.out.println("Enter ID: ");
@@ -19,10 +17,9 @@ public class ProductManager {
 		
 		System.out.println("Enter name: ");
 		String name = sc.nextLine();
-		sc.nextLine();
 		
 		System.out.println("Enter price: ");
-		double price = sc.nextInt();
+		double price = sc.nextDouble();
 		sc.nextLine();
 		
 		System.out.println("Enter quantity: ");
@@ -61,7 +58,7 @@ public class ProductManager {
 	    }
 	}
 	
-	public void removeProduct() {
+	public void removeProduct(Scanner sc) {
 		System.out.println("Enter the ID to remove: ");
 		int idInput = sc.nextInt();
 		
