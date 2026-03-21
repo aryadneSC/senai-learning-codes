@@ -37,7 +37,7 @@ public class Main {
                     break;
 
                 case 4:
-                	manager.removeProduct();
+                	manager.removeProduct(sc);
                     break;
 
                 case 5:
