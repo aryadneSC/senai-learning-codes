@@ -5,5 +5,5 @@ import java.util.ArrayList;
 
 public class Animal {
 	private String name;
-	private List<String> race = new ArrayList<>();
+	private List<Specie> race = new ArrayList<>();
 }
