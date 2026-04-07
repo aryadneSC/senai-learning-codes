@@ -1,17 +1,14 @@
 package br.com.senai.class07.model;
 
-import java.util.List;
-import java.util.ArrayList;
-
 public class Animal {
 	private String name;
-	private List<Specie> race = new ArrayList<>();
+	private String race;
 	private boolean isAlive;
 	
-	public Animal (String name, Specie race, boolean isAlive) {
+	public Animal (String name, String race) {
 		setName (name);
 		setRace (race);
-		isAlive = true;
+		this.isAlive = true;
 	}
 	
 	public void setName (String name) {
@@ -20,7 +17,31 @@ public class Animal {
 		this.name = name;
 	}
 	
-	public void setRace (Specie race) {
-		
+	public String getName () {
+		return name;
+	}
+	
+	public void setRace(String race) {
+		if (race == null || race.trim().isEmpty())
+			throw new IllegalArgumentException ("Race type is invalid. Please try again.");
+		this.race = race;
+	}
+	
+	public String getRace () {
+		return race;
+	}
+	
+	public boolean isAlive () {
+		if (isAlive == false)
+			System.out.println ("is unalived");
+		else
+			System.out.println ("is alive.");
+		return isAlive;
+	}
+	
+	public void displayAnimalInfo () {
+		System.out.println ("Name: " + name);
+		System.out.println ("Race: " + race);
+		isAlive();
 	}
 }
