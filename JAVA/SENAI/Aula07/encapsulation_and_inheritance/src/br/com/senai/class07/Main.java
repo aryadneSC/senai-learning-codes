@@ -5,8 +5,8 @@ import br.com.senai.class07.model.Animal;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Animal animal = new Animal ("Rex", "Gato");
-		animal.displayAnimalInfo();
+	public static void main(String[] args) {	
+		Vehicle vehicle = new Vehicle ("Honda", "Civic");
+		vehicle.displayVehicleInfo();
 	}
 }
