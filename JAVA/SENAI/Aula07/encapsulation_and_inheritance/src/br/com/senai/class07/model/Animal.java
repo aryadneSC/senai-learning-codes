@@ -39,9 +39,21 @@ public class Animal {
 		return isAlive;
 	}
 	
+	public void walk () {
+		System.out.println (getName() + ", the " 
+				+ getRace() + ", is walking...");
+	}
+	
+	public void eat () {
+		System.out.println (getName() + ", the " 
+				+ getRace() + ", is eating ");
+	}		
+	
 	public void displayAnimalInfo () {
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 		System.out.println ("Name: " + name);
 		System.out.println ("Race: " + race);
 		isAlive();
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 	}
 }
