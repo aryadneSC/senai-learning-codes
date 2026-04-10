@@ -6,5 +6,9 @@ public class Cat extends Animal {
 		super(name, race);
 		isAlive = true;
 	}
-
+	
+	public void speak() {
+		System.out.println("The cat goes *meow*");
+		System.out.println();
+	}
 }

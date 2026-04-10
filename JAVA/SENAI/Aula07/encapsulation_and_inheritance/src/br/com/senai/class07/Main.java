@@ -13,12 +13,14 @@ public class Main {
 		Cat cat = new Cat("Mimi", "Calico");
 		
 		dog.displayAnimalInfo();
+		dog.speak();
 		dog.eat();
 		dog.walk();
 		
 		System.out.println();
 		
 		cat.displayAnimalInfo();
+		cat.speak();
 		cat.eat();
 		cat.walk();
 	}

@@ -1,7 +1,7 @@
 package br.com.senai.class07.model;
 
 public class Organism {
-	public boolean isAlive;
+	protected boolean isAlive;
 	
 	public boolean isAlive () {
 		if (isAlive == false)
