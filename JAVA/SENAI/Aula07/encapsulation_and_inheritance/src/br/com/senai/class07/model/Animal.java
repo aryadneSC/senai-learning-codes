@@ -1,14 +1,12 @@
 package br.com.senai.class07.model;
 
-public class Animal {
+public class Animal extends Organism {
 	private String name;
 	private String race;
-	private boolean isAlive;
 	
 	public Animal (String name, String race) {
 		setName (name);
 		setRace (race);
-		this.isAlive = true;
 	}
 	
 	public void setName (String name) {
@@ -29,14 +27,6 @@ public class Animal {
 	
 	public String getRace () {
 		return race;
-	}
-	
-	public boolean isAlive () {
-		if (isAlive == false)
-			System.out.println ("is unalived");
-		else
-			System.out.println ("is alive.");
-		return isAlive;
 	}
 	
 	public void walk () {
