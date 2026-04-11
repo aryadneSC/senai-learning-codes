@@ -44,6 +44,6 @@ public class Animal extends Organism {
 		System.out.println ("Name: " + name);
 		System.out.println ("Race: " + race);
 		isAlive();
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
 	}
 }
