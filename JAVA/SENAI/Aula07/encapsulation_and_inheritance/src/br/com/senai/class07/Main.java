@@ -18,6 +18,8 @@ public class Main {
 		System.out.println("Doors: " + car.getDoors());
 		car.isOn();
 		
+		System.out.println();
+		
 		moto.displayVehicleInfo();
 		System.out.println("Cylinder capacity: " + moto.getCC() + " cc");
 		moto.isOn();
