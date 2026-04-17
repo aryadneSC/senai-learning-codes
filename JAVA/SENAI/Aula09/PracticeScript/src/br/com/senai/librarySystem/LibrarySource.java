@@ -29,4 +29,24 @@ abstract class LibrarySource {
 		this.title = title;
 	}
 	
+	protected int getPublicationYear() {
+		return publicationYear;
+	}
+	
+	protected String getAuthor() {
+		return author;
+	}
+	
+	protected String getTitle() {
+		return title;
+	}
+	
+	void showDetails() {
+		System.out.println("");
+	}
+	
+	public void borrow() {
+		System.out.println("Borrowed title: " + title);	
+		
+	}
 }
