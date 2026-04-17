@@ -1,9 +1,9 @@
 package br.com.senai.librarySystem;
 
 abstract class LibrarySource {
-	private String title;
-	private String author;
-	private int publicationYear;
+	protected String title;
+	protected String author;
+	protected int publicationYear;
 	
 	public LibrarySource(String title, String author, int publicationYear) {
 		setTitle(title);
@@ -42,7 +42,9 @@ abstract class LibrarySource {
 	}
 	
 	void showDetails() {
-		System.out.println("");
+		System.out.println("Title: " + title);
+		System.out.println("Author: " + author);
+		System.out.println("Year of Publication: " + publicationYear);
 	}
 	
 	public void borrow() {
