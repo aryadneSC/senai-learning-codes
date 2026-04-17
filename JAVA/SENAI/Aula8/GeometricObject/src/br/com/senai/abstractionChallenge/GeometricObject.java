@@ -12,8 +12,12 @@ public interface GeometricObject {
 		return 2 * (height + width);
 	}
 	
-	default double circleArea(float r) {
-		return 1;
+	default double circleArea(double r) {
+		return Math.PI * r * r;
+	}
+	
+	default double circlePerimeter(double r) {
+		return 2 * Math.PI * r;
 	}
 	
 	default double trianglePerimeter(double x, double y, double z) {
