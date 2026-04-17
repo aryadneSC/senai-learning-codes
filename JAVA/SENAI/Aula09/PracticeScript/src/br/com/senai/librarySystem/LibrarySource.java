@@ -1,0 +1,32 @@
+package br.com.senai.librarySystem;
+
+abstract class LibrarySource {
+	private String title;
+	private String author;
+	private int publicationYear;
+	
+	public LibrarySource(String title, String author, int publicationYear) {
+		setTitle(title);
+		setAuthor(author);
+		setPublicationYear(publicationYear);
+	}
+
+	protected void setPublicationYear(int publicationYear) {
+		if(publicationYear < 0) 
+			throw new IllegalArgumentException("Please insert a valid year of publication.");
+		this.publicationYear = publicationYear;
+	}
+
+	protected void setAuthor(String author) {
+		if(author == null || author.trim().isEmpty()) 
+			throw new IllegalArgumentException("Please insert a valid author name.");
+		this.author = author;
+	}
+
+	protected void setTitle(String title) {
+		if(title == null || title.trim().isEmpty())
+			throw new IllegalArgumentException("Please insert a valid title.");
+		this.title = title;
+	}
+	
+}
