@@ -2,9 +2,10 @@ package br.com.senai.aryadne.class09.librarySystem.model;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Library {
-	private List<String> LibrarySource = new ArrayList<>();
+	private List<Library> LibrarySource = new ArrayList<>();
 	
 	public void addSource(LibrarySource material) {
 		
