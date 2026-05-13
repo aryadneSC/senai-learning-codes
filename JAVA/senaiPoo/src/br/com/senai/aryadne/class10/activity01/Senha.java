@@ -25,7 +25,7 @@ public class Senha {
 	}
 	
 	public String gerarSenhaPrioritaria(String senha) {
-		prioritaria.add(senha);
+		prioritaria.add("(P)" + senha);
 		return senha;
 	}
 	
