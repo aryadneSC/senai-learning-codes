@@ -9,7 +9,7 @@ public class ContaInvestimento {
     public ContaInvestimento(int numeroDaConta, String nomeDoTitular, double saldoInicial, double taxaJuros) {
         this.numeroDaConta = numeroDaConta;
         this.nomeDoTitular = nomeDoTitular;
-        this.saldo = saldoInitial;
+        this.saldo = saldoInicial;
         this.taxaJuros = taxaJuros;
     }
 

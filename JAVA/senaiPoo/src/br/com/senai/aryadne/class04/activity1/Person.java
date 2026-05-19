@@ -51,10 +51,10 @@ public class Person {
     }
     
     public void growOld() {
-        if(age < 21 == 0) {
+        if(age < 21) {
             this.height += 0.5;
             this.age++;
-        } if(age > 20 && <= 21 == 0) {
+        } if(age > 20 && age <= 21) {
             System.out.println(this.name + " is an adult!");
         }
         System.out.println("It's " + this.name + " birthday!");
@@ -76,4 +76,4 @@ public class Person {
         };
     }
     
-}p
+}

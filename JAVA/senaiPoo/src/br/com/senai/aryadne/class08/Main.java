@@ -2,6 +2,11 @@ package br.com.senai.aryadne.class08;
 
 import java.math.*;
 
+import br.com.senai.aryadne.class08.model.Circle;
+import br.com.senai.aryadne.class08.model.GeometricObject;
+import br.com.senai.aryadne.class08.model.Rectangle;
+import br.com.senai.aryadne.class08.model.Triangle;
+
 public class Main {
 
 	public static void main(String[] args) {

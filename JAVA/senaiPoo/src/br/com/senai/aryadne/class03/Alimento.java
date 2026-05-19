@@ -29,10 +29,7 @@ class Alimento {
     public String toString() {
         return this.nome + "  " + this.kcal + " Kcal";
     }
-    
-}
 
-public class Main {
 	public static void main(String[] args) {
 		
 		Alimento alimento1 = new Alimento("Melancia", 32.0);

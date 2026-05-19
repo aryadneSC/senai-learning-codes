@@ -20,9 +20,7 @@ public class ContaCorrente {
             this.saldo -= valor;
         }
     }
-}
 
-public class Main {
     public static void main(String[] args) {
         ContaCorrente minhaConta = new ContaCorrente(1234, "Aryadne");
 

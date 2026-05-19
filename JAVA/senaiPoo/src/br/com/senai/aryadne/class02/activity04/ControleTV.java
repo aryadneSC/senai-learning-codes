@@ -70,11 +70,11 @@ public class ControleTV {
 		boolean ligado = sc.nextBoolean();
 		tv.setLigado(ligado);
 
-		System.out.println("Canal:);
+		System.out.println("Canal:");
 		int canal = sc.nextInt();
 		tv.setCanal(canal);
 
-		System.out.println("Volume:);
+		System.out.println("Volume:");
 		int volume = sc.nextInt();
 		tv.setVolume(volume);
 
