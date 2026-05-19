@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Macaco {
+class Macaco1 {
     private String nome;
     private List<String> estomago;
     
-    public Macaco(String nome) {
+    public Macaco1(String nome) {
         this.nome = nome;
         this.estomago = new ArrayList<>(); 
     }
@@ -30,14 +30,12 @@ class Macaco {
         this.estomago.clear();
         System.out.println(this.nome + " fez caca");
     }
-}
 
-public class Exercicio02 {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
         
-        Macaco meuMacaco = new Macaco("Chico");
+        Macaco1 meuMacaco = new Macaco1("Chico");
         
         System.out.println("Macaco " + meuMacaco.getNome() + " nasceu!");
         

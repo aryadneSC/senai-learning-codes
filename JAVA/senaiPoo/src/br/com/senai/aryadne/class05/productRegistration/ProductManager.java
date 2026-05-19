@@ -3,7 +3,7 @@ package br.com.senai.aryadne.class05.productRegistration;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import exercicio.productRegistration.Product;
+import br.com.senai.aryadne.class05.productRegistration.*;
 
 public class ProductManager {
 	private ArrayList<Product> stock = new ArrayList<>();

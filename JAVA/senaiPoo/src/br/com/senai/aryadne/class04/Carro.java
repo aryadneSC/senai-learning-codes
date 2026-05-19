@@ -34,9 +34,7 @@ public class Carro {
     public void abastecer(double quantidade) {
         this.combustivel += quantidade;
     }
-}
 
-public class Main {
     public static void main(String[] args) {
         Carro meuFusca = new Carro(10.0);
 

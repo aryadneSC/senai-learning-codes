@@ -1,11 +1,11 @@
 package br.com.senai.aryadne.class07;
 
-import br.com.senai.class07.model.Vehicle;
-import br.com.senai.class07.model.Animal;
-import br.com.senai.class07.model.Cat;
-import br.com.senai.class07.model.Dog;
-import br.com.senai.class07.model.Car;
-import br.com.senai.class07.model.Motocycle;
+import br.com.senai.aryadne.class07.model.Vehicle;
+import br.com.senai.aryadne.class07.model.Animal;
+import br.com.senai.aryadne.class07.model.Cat;
+import br.com.senai.aryadne.class07.model.Dog;
+import br.com.senai.aryadne.class07.model.Car;
+import br.com.senai.aryadne.class07.model.Motocycle;
 
 public class Main {
 

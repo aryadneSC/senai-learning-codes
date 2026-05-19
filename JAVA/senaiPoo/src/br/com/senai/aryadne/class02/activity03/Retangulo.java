@@ -2,7 +2,7 @@ package br.com.senai.aryadne.class02.activity03;
 
 import java.util.Scanner;
 
-import exercicio02.Quadrado;
+import br.com.senai.aryadne.class02.activity02.Quadrado;
 
 public class Retangulo {
 	public int base;
