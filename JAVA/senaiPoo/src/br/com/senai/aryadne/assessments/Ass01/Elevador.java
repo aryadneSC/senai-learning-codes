@@ -54,11 +54,12 @@ public class Elevador {
 	}
 	
 	public void sair () {
-		if (pessoa <= capacidade) {
-		System.out.println("Elevador liberado!");
+		if (pessoa <= 0) {
+		System.out.println("Elevador vazio!");
 		return;
 		}
 		pessoa--;
+		System.out.println("Uma pessoa saiu!");
 	}
 	
 	public void subir () {
@@ -82,30 +83,38 @@ public class Elevador {
 	public static void main(String[] args) {
 		Elevador e = new Elevador(2, 2);
 		
+		// teste 1: Adicione o máximo de pessoas no elevador 
+		// 			e depois tente adicionar mais uma
 		System.out.println("Pessoas dentro do elevador: " + e.getPessoa());
-		System.out.println("Capacidade: " + e.getCapacidade());
-		
+		e.entrar();
 		e.entrar();
 		System.out.println("Pessoas dentro do elevador: " + e.getPessoa());
-		
-		e.entrar();
-		System.out.println("Pessoas dentro do elevador: " + e.getPessoa());
-		
 		e.entrar(); // Capacidade máxima
-		System.out.println(); // pula linha
+		System.out.println(); 
 		
-		e.subir();
+		// teste 2: Suba até o último andar e depois tente subir mais um andar
 		System.out.println("Andar atual: " + e.getTerreo());
+		e.subir();
 		e.subir();
 		System.out.println("Andar atual: " + e.getTerreo()); // último andar
+		e.subir(); // último andar
+		System.out.println();
 		
-		e.descer();
+		// teste 3: Desça até o térreo e depois tente descer mais um andar
 		System.out.println("Andar atual: " + e.getTerreo());
 		e.descer();
-		System.out.println("Andar atual: " + e.getTerreo()); // térreo
-		
 		e.descer();
-		System.out.println("Andar atual: " + e.getTerreo()); // já esta no térreo
+		System.out.println("Andar atual: " + e.getTerreo()); // térreo
+		e.descer(); // térreo
+		System.out.println();
+		
+		// teste 4: Removas todas as pessoas do elevador 
+		// 			e depois tente remover mais uma
+		System.out.println("Pessoas dentro do elevador: " + e.getPessoa());
+		e.sair();
+		e.sair();
+		e.sair(); // elevador vazio
+		System.out.println("Pessoas dentro do elevador: " + e.getPessoa());
 	}
 
 }
