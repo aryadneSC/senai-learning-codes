@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_cadastro_produto">
+
+    <EditText
+        android:id="@+id/edtNomePdt"
+        android:layout_width="357dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="27dp"
+        android:ems="10"
+        android:hint="Digite aqui..."
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/txtPrecoPdt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.903" />
+
+    <TextView
+        android:id="@+id/txtNomePdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="271dp"
+        android:layout_marginBottom="12dp"
+        android:text="Nome do produto:"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/edtNomePdt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtPrecoPdt"
+        android:layout_width="360dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="27dp"
+        android:hint="Digite aqui..."
+        android:inputType="text"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnEnviarCadastroPdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="222dp"
+        android:onClick="cadastrarProduto"
+        android:text="Cadastrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPrecoPdt" />
+
+    <TextView
+        android:id="@+id/txtPrecoPdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="275dp"
+        android:layout_marginBottom="8dp"
+        android:text="Preço do produto:"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/edtPrecoPdt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCadastrado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="26dp"
+        android:text="Produto cadastrado com sucesso!"
+        app:layout_constraintBottom_toTopOf="@+id/btnEnviarCadastroPdt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPrecoPdt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
