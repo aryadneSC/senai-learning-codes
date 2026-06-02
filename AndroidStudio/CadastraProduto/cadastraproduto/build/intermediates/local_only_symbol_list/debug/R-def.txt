@@ -1,0 +1,10 @@
+R_DEF: Internal format may change without notice
+local
+id btnAdd
+id btnSalvar
+id editTxtNome
+id editTxtPreco
+id listViewProdutos
+layout activity_cadastro_produto
+layout activity_main
+string app_name

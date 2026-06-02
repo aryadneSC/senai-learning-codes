@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.cadastraproduto-merged_res-38:/layout_activity_main.xml.flat",
+        "source": "com.example.cadastraproduto-main-40:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.cadastraproduto-merged_res-38:/layout_activity_cadastro_produto.xml.flat",
+        "source": "com.example.cadastraproduto-main-40:/layout/activity_cadastro_produto.xml"
+    }
+]
