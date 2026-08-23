@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    background-color: rgb(86, 3, 116);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 147px 1fr 147px;
+    gap: 10px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.sidebar-left, .sidebar-right {
+    background-color: rgb(255, 255, 255);
+}
+
+footer {
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+.content {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
