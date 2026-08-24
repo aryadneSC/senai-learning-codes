@@ -3,6 +3,10 @@ body {
     background-color: rgb(86, 3, 116);
 }
 
+.site-header {
+    text-align: center;
+}
+
 .layout {
     display: grid;
     grid-template-columns: 147px 1fr 147px;
@@ -13,6 +17,7 @@ body {
 
 .sidebar-left, .sidebar-right {
     background-color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 footer {
