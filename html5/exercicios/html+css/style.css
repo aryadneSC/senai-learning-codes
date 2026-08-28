@@ -2,8 +2,13 @@
     margin: auto;
 }
 
+body {
+    background-color: blueviolet;
+    filter:contrast(100%)
+}
+
 h1 {
-    color: blueviolet;
+    color:chartreuse;
 }
 
 .descricao {
