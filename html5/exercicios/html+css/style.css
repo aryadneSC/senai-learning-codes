@@ -1,3 +1,11 @@
 * {
     margin: auto;
 }
+
+h1 {
+    color: blueviolet;
+}
+
+.descricao {
+    color: cornflowerblue;
+}
