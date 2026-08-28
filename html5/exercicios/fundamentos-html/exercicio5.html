@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html><!DOCTYPE html>
 <html dir="ltr" lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -18,18 +8,20 @@
 <body>
     <header>
         <h1>Contato</h1>
-        <form action="https://tecnicosenai.com.br/" method="POST" enctype="text/plain">
-            <label>Nome</label><br>
-            <input type="text" name="nome"><br>
-
-            <label>Email</label><br>
-            <input type="text" name="email"><br>
-
-            <label>Senha</label><br>
-            <input type="password" name="password"><br>
-
-            <input type="button" value="Enviar">
-        </form>
     </header>
+
+    <main>
+        <form action="https://tecnicosenai.com.br/" method="POST" enctype="text/plain">
+            <label for="name">Nome</label><br>
+            <input type="text" id="name" name="nome"><br>
+
+            <label for="email">Email</label><br>
+            <input type="text" id="email" name="email"><br>
+
+            <label for="password">Senha</label><br>
+            <input type="password" id="password" name="password"><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
 </body>
-</html>
