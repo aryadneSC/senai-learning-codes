@@ -7,12 +7,19 @@ body {
     filter:contrast(100%)
 }
 
+footer {
+    color:antiquewhite;
+    text-align: center;
+}
+
 h1 {
     color:chartreuse;
+    text-align: center;
 }
 
 .descricao {
     color: cornflowerblue;
+    text-align: center;
 }
 
 .desc_solar {
@@ -24,6 +31,10 @@ h1 {
     margin-inline: 100px;
     padding: 100px;
     border: 3px;
+}
+
+.p_ex10 {
+    text-align: center;
 }
 
 .meme-icarly {
