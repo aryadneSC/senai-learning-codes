@@ -18,3 +18,14 @@ h1 {
 .desc_solar {
     color: aqua;
 }
+
+.div_ex09 {
+    height: auto;
+    margin-inline: 100px;
+    padding: 100px;
+    border: 3px;
+}
+
+.meme-icarly {
+    border-radius: 50%;
+}
