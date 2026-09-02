@@ -1,0 +1,48 @@
+* {
+    margin: auto;
+}
+
+body {
+    background-color: blueviolet;
+    filter:contrast(100%)
+}
+
+footer {
+    color:antiquewhite;
+    text-align: center;
+}
+
+h1, h3 {
+    color:chartreuse;
+    text-align: center;
+}
+
+.cadastro {
+    color:chartreuse;
+    text-align:left;
+    font-weight: bold;
+}
+
+.descricao {
+    color: cornflowerblue;
+    text-align: center;
+}
+
+.desc_solar {
+    color: aqua;
+}
+
+.div_ex09 {
+    height: auto;
+    margin-inline: 100px;
+    padding: 100px;
+    border: 3px;
+}
+
+.p_ex10 {
+    text-align: center;
+}
+
+.meme-icarly {
+    border-radius: 50%;
+}
