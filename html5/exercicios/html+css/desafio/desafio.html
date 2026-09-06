@@ -4,36 +4,40 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Simples de Sistema</title>
+    <title>Cadastro Simples</title>
 </head>
 <body>
     <header>
-        <h1>Cadastro Simples</h1>
+        <h1>Cadastro</h1>
         <nav>
             <ul>
-                <a href="quem_somos.html">Quem somos |</a>
-                <a href="contato.html">Contato</a>
+                <a href="sobre.html"><li>Sobre</li></a>
             </ul>
         </nav>
     </header>
 
     <main>
-        <aside class="cadastro">
-            <h2>Cadastro Tutor</h2>
-            <form action="/enviar" method="POST">
-                <label for="nome">Nome</label><br>
-                <input type="text" id="nome" name="nome" required><br>
-                <label for="email">E-mail</label><br>
-                <input type="text" id="email" name="email" required><br>
-                <label for="senha">Senha</label><br>
-                <input type="password" id="senha" name="senha" required><br>
-
-                <button type="submit">Enviar</button>
-        </aside>
+        <section>
+            <div class="cadastro-conteiner">
+                <form action="/enviar" method="POST">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="email" name="email" required><br>
+                    <label for="password">Senha:</label>
+                    <input type="text" id="password" name="password" required><br>
+                    <label for="tel">Telefone:</label>
+                    <input type="tel" id="tel" name="tel"><br>
+                    <button type="submit" value="Enviar">Enviar</button>
+                    <button type="reset" value="Limpar">Limpar</button>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer>
-        Cadastro Simples. Simplificando sua vida desde 2026.
+        <p>&copy; 2026 Cadastro Simples</p>
+        <p>contato: simples@email.com</p>
     </footer>
 </body>
 </html>
