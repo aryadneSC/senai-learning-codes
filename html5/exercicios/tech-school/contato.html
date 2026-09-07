@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+        <img src="./img/logo.png" alt="logo da Tech School">
+        <h1>Tech School</h1>
+        </div>
+
+        <nav>
+             <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="pagina-titulo">
+            <h2>Nossos cursos</h2>
+            <p>Escolha um curso e comece sua jornada no mundo da tecnologia</p>
+        </section>
+
+        <section class="formulario-conteiner">
+            <form>
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone">
+                </div>
+
+                <div class="campo">
+                    <label for="curso">Curso de interesse:</label>
+
+                    <select name="curso" id="curso">
+                        <option value="">Selecione um curso</option>
+                        <option value="web">Desenvolvimento Web</option>
+                        <option value="banco-dados">Banco de Dados</option>
+                        <option value="programacao">Lógica de Programação</option>
+                    </select>
+                </div>
+
+                <fieldset>
+                    <legend>Modalidade</legend>
+                    <div class="opcao">
+                        <input type="radio" id="presencial" name="modalidade" value="presencial">
+                        <label for="presencial">Presencial</label>
+                    </div>
+
+                    <div class="opcao">
+                        <input type="radio" id="presencial" name="modalidade" value="online">
+                        <label for="presencial">On-line</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Assuntos</legend>
+                    <div class="opcao">
+                        <input type="checkbox" id="matricula" name="matricula" value="matricula">
+                        <label for="presencial">Matrícula</label>
+                    </div>
+
+                    <div class="opcao">
+                        <input type="checkbox" id="valor" name="valor" value="valor">
+                        <label for="presencial">Valor</label>
+                    </div>
+
+                    <div class="opcao">
+                        <input type="checkbox" id="outros" name="outros" value="outros">
+                        <label for="presencial">Outros</label>
+                    </div>
+                </fieldset>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem: </label>
+                    <textarea name="mensagem" id="mensagem" rows="1" placeholder="Digite sua mensagem"></textarea>
+                </div>
+                
+                <div class="botoes">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Tech School - Escola de Tecnologia</p>
+    </footer>
+</body>
+</html>

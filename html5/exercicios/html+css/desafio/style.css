@@ -1,80 +1,48 @@
 * {
-    box-sizing: border-box;
+    margin: auto;
 }
 
 body {
-    min-height: 100vh;
-    background-color: rgb(108, 108, 255);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: blueviolet;
+    filter:contrast(100%)
 }
 
-header, footer {
-    display: flexbox;
-    text-align: center;
-    color: rgb(255,255,255);
-    padding: 1rem;
-}
-
-h1 {
-    color: rgb(255,255,255);
+footer {
+    color:antiquewhite;
     text-align: center;
 }
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 0;
+h1, h3 {
+    color:chartreuse;
+    text-align: center;
 }
 
-nav a {
-    color: rgb(0,0,0);
-    list-style: none;
+.cadastro {
+    color:chartreuse;
+    text-align:left;
+    font-weight: bold;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    padding: 2rem, 1rem;
+.descricao {
+    color: cornflowerblue;
+    text-align: center;
 }
 
-.cadastro-conteiner {
-    width: min(100%, 28rem);
-    display: flex;
-    background-color: rgb(255,255,255);
-    padding: 1rem;
-    justify-content: center;
-    border-radius: 6%;
+.desc_solar {
+    color: aqua;
 }
 
-.cadastro form {
-    display: grid;
-    gap: 0.25rem;
+.div_ex09 {
+    height: auto;
+    margin-inline: 100px;
+    padding: 100px;
+    border: 3px;
 }
 
-input {
-    padding: 0.25rem;
-    margin: 10px;
+.p_ex10 {
+    text-align: center;
 }
 
-button {
-    width: 100%;
-    padding: 2%;
-    margin-top: 10px;
-    justify-content: center;
-    border: 0;
-    cursor: pointer;
-    background-color: rgb(108, 108, 255);
-    color: rgb(255,255,255)
-}
-
-/* sobre.html */
-main {
-    width: min(100%, 28rem);
-    display: flex;
-    background-color: rgb(255,255,255);
-    padding: 2rem;
-    margin: 5px;
-    border-radius: 15px;
-    margin: 0 auto;
+.meme-icarly {
+    border-radius: 50%;
 }

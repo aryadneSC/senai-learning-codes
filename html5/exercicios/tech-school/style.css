@@ -1,0 +1,143 @@
+/* Reset */
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2;
+    background-color: rgb(225,225,225);
+}
+
+/* Header */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 5%px;
+    
+}
+
+.logo-area img {
+    width: 180px;
+    align-items: center;
+}
+
+h1 {
+    text-align: left;
+    font-size: 40px;
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    padding-right: 8%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    gap: 1rem;
+}
+
+header nav a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--foreground-color)
+}
+header nav a:hover {
+    color: rgb(0, 0, 255);
+}
+
+li {
+    list-style: none;
+    a {
+        color: rgb(0,0,0);
+    }
+}
+
+/* Main */
+.hero {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+    gap: 40px;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 5%;
+}
+
+.hero a {
+    color: rgb(0,0,0);
+}
+
+.hero a:hover {
+    color: rgb(0, 0, 255);
+}
+
+.hero img {
+    width:  60%;
+    object-fit: contain;
+    border-radius: 5%;
+}
+
+.hero h2 {
+    margin-top: 0;
+}
+
+main {
+    width: 80%;
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: var(--header-height);
+}
+
+.beneficios {
+    margin-top: 50px;
+}
+
+.beneficios h2 {
+    text-align: center;
+}
+
+.beneficios-conteiner {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.beneficios article {
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.beneficios h3 {
+    margin-top: 30px;
+}
+
+.beneficios p {
+    margin-bottom: 30px;
+}
+
+/* Main cursos */
+.pagina-titulo {
+    background-color: rgb(255,255,255);
+    padding: 30px;
+}
+
+/* Rodapé */
+footer {
+    background: #333;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+}
