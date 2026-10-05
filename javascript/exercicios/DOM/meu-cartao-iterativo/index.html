@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Cartão Iterativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1 id="title-id" class="page-title">toc toc!</h1>
+
+        <div class="hero">
+            <img src="img/profile.png" alt="Foto de Perfil" class="profile-img">
+            <div class="hero-content">
+                <p id="title-desc" class="desc">Clique no botão para descobrir quem é!</p>
+                <button class="btn" onclick="mostrarMensagem()">quem é?</button>
+                <button class="btn" onclick="restaurar()">esconder</button>
+            </div>
+        </div>
+
+        <!-- Cards Grid -->
+        <article class="card">
+            <img src="img/linkedin-icon.jpg" alt="Imagem do Card" class="card-img">
+
+            <div class="card-body">
+                <a href="#" class="btn" onclick="linkedinBtn()">LinkedIn</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="img/github-icon.png" alt="Imagem do Card" class="card-img">
+
+            <div class="card-body">
+                <a href="#" class="btn" onclick="githubBtn()">GitHub</a>
+            </div>
+        </article>
+        
+    </main>
+
+    <footer>
+        <p class="footer-desc">Feito por Aryadne Campos. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
