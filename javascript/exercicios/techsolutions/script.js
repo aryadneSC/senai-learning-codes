@@ -30,7 +30,7 @@ function mostrarServico(idMensagem, texto) {
 }
 
 function enviarMensagem(event) {
-    // Evitar o refresh da pag de resetar dados no formulário
+    // Evitar o refresh da pag de resetar dados do formulário
     event.preventDefault();
 
     const feedback = document.getElementById('feedback-contato');
@@ -50,6 +50,9 @@ function ativarModoEscuro() {
         c.style.borderColor = "#6a4cff";
     });
     document.querySelectorAll('.card-body p').forEach(t => t.style.color = "#dddddd");
+
+    // VALIDAR DEPOIS!!!
+    //document.querySelectorAll('.input').forEach(t => t.backgroundColor = '#333')
 
     const hero = document.querySelector('.hero-content');
     if (hero) hero.style.backgroundColor = "#2a2a2a";
