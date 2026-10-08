@@ -76,20 +76,9 @@ body {
 
 .nav-list a:hover {
     color: var(--sec-color);
+    transition: 0.3s;
 }
 
-.btn-dark {
-    background-color: transparent;
-    color: var(--txt-color);
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.btn-dark:hover {
-    background-color: var(--sec-color);
-}
 
 .container {
     display: flex;
@@ -153,10 +142,6 @@ body {
     display: inline-block;
 }
 
-.btn:hover {
-    background-color: var(--btn-hover);
-}
-
 .btn-secondary {
     background-color: #fff;
     color: var(--borda);
@@ -169,8 +154,31 @@ body {
     display: inline-block;
 }
 
+.btn:hover, 
+.btn-dark:hover {
+    background-color: var(--btn-hover);
+    transition: 0.3s;
+}
+
 .btn-secondary:hover {
     background-color: #f0f0f0;
+    transition: 0.3s;
+}
+
+.btn-dark {
+    background-color: transparent;
+    color: var(--txt-color);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.botoes-interacao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
 }
 
 .interacao {
@@ -190,12 +198,6 @@ body {
     color: var(--text-muted);
 }
 
-.botoes-interacao {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-}
 
 .servicos-grid {
     display: flex;
@@ -295,4 +297,9 @@ footer {
 footer a {
     color: var(--sec-color);
     text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--txt-color);
+    transition: 0.3s;
 }

@@ -30,6 +30,9 @@ function mostrarServico(idMensagem, texto) {
 }
 
 function enviarMensagem(event) {
+    // Evitar o refresh da pag de resetar dados no formulário
+    event.preventDefault();
+
     const feedback = document.getElementById('feedback-contato');
     feedback.style.color = "#00a651";
     feedback.style.fontWeight = "bold";
