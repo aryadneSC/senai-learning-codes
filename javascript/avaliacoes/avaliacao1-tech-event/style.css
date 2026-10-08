@@ -1,0 +1,247 @@
+:root {
+  --primary:#404041;
+  --secondary: #e2e2e4;
+  --text-color:#111827;
+  --bg-color: #F3F4F6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #dadada;
+    color: #111827;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 26px;
+    position: sticky;
+    z-index: 0;
+    width: 100%;
+}
+
+header p {
+    margin-top: 10px;
+}
+
+.logo-tech {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-tech img {
+    height: 45px;
+}
+
+.logo-tech h1 {
+    font-size: 22px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: rgb(180, 180, 180);
+}
+
+/* Main */
+main {
+    flex: 1;
+}
+
+.hero {
+    text-align: center;
+    background: linear-gradient(#9e0f0f, #3e0303);
+    color: #F3F4F6;
+    padding: 60px 20px;
+}
+
+.hero h2 {
+    color: white;
+}
+
+.hero p {
+    max-width: 600px;
+    margin:  14px auto;
+}
+
+.btn {
+    background: #020000;
+    text-decoration: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 8px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: rgb(99, 99, 99);
+}
+
+.cards {
+    display: flex;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+    gap: 20px
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    flex: 1;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/*Sobre*/
+
+.sobre-conteudo {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.sobre-conteudo h2 {
+    color: #630404;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.beneficios {
+    margin-top: 15px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.beneficios li {
+    background: #630404;
+    color: white;
+    padding: 8px;
+    border-left: 5px solid #a40404;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+.beneficios li:hover {
+    background: #270101;
+    transform: translateX(5px);
+}
+
+/* Inscrição*/
+
+.inscricao-conteiner {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.inscricao-conteiner h2 {
+    color: #630404;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.inline {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.inline input {
+    width: initial;
+    margin-top: 0;
+}
+
+.inline label {
+    display: inline-block;
+    margin-top: 0;
+}
+
+.botoes {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.btn-secundario:hover {
+    background: #313131;
+}
+
+/* Footer*/
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background: black;
+    padding: 15px;
+    color: white;
+}
+
+footer p {
+    margin-top: 0;
+    text-align: center;
+}
