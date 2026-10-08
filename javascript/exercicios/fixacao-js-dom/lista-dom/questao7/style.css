@@ -1,0 +1,71 @@
+:root {
+    --bg-color: #F4F4F0;
+    --primary-color: ##ffffff;
+    --sec-color: #CAD2C5;
+    --btn-color: #52796F;
+    --txt-color: #050000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 16px;
+    margin: 32px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, p {
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: var(--txt-color);
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.card-body {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 16px;
+    margin: 32px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F4F4F0;
+    border-radius: 8px;
+}
+
+.btn {
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-align: center;
+}
