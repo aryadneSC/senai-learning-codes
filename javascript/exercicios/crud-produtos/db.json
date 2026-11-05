@@ -1,0 +1,15 @@
+{
+  "produtos": [
+    {
+      "nome": "Coxinha",
+      "preco": "10",
+      "id": "ezgdmrrXnjE"
+    },
+    {
+      "nome": "Pastel",
+      "preco": "8",
+      "id": "y2cmHnNLQCg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
